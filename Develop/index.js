@@ -2,10 +2,11 @@
 var fs = require("fs");
 // var staticSite = require("static-site");
 var inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js");
-const generatePage = require("./utils/generatePage");
-// const { writeFile, copyFile } = require("./utils/generatePage.js");
+// const generateMarkdown = require("./utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown");
 
+generatePage.writeFile(content);
+generatePage.copyFile("filename.txt");
 /////////////////working questions list////////////
 // TODO: Create an array of questions for user input
 const questions = [
@@ -154,7 +155,7 @@ var answers = [
     email: "hollister.charissa@gmail.com",
   },
 ];
-const content = generateMarkdown(answers);
+const { content } = generateMarkdown(answers);
 console.log(answers);
 //////////end of mock data & mock function/////////////
 
@@ -204,7 +205,6 @@ init();
 //     });
 //   });
 
-
 /////ronny's example of if I wanted to pass 2 items. deconstruct frist then pass
 
 // promptUser().then((answers) => {
@@ -215,8 +215,7 @@ init();
 //   writeToFile("filename-here.md", content);
 // });
 
-
-///// map is like for each but makes a new array 
+///// map is like for each but makes a new array
 // promptUser()
 //   //   .then(promptProject)
 //   .then((license) => {
@@ -235,4 +234,3 @@ init();
 //   .catch((err) => {
 //     console.log(err);
 //   });
-

@@ -14,8 +14,25 @@
 
 // https://github.com/CharissaHollister
 
-// var fs = require("fs");
-const generateMarkdown = reuire("./utils/generateMarkdown.js");
+var fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown.js");
+
+
+
+
+
+
+
+
+
+
+module.exports = { writeFile, copyFile };
+
+
+
+
+
+
 // // title of my project and Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 // const projectData = {
 //   title: "testing title",

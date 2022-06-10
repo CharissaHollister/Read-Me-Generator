@@ -1,3 +1,19 @@
+// var answers = [
+//   {
+//     title: "X",
+//     description: "X",
+//     installation: "X",
+//     usage: "X",
+//     contribute: "X",
+//     test: "X",
+//     license: ["X"],
+//     github: "X",
+//     email: "X",
+//   },
+// ];
+
+// https://github.com/CharissaHollister
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
@@ -18,8 +34,5 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
-
-
-
 
 // license choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
