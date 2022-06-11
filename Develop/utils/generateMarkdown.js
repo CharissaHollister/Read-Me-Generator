@@ -39,6 +39,8 @@ function renderLicenseSection(licenseType) {
 }
 
 // TODO: Create a function to generate markdown for README
+
+////double Hash showing up instead of creating header. link in TOC not working. email not a link and email/github show alt text things and the link
 function generateMarkdown(data) {
   // console.log(data);
   let licenseType = data.license;
