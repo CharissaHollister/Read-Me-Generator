@@ -2,11 +2,8 @@
 var fs = require("fs");
 // var staticSite = require("static-site");
 var inquirer = require("inquirer");
-// const generateMarkdown = require("./utils/generateMarkdown.js");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-generatePage.writeFile(content);
-generatePage.copyFile("filename.txt");
 /////////////////working questions list////////////
 // TODO: Create an array of questions for user input
 const questions = [
@@ -17,6 +14,20 @@ const questions = [
     message: "what is the title of your project?",
     validate: (titleInput) => {
       if (titleInput) {
+        return true;
+      } else {
+        console.log("Entry required!");
+        return false;
+      }
+    },
+  },
+  {
+    //get Project Authors
+    type: "input",
+    name: "authors",
+    message: "Who are the Project authors?",
+    validate: (authorsInput) => {
+      if (authorsInput) {
         return true;
       } else {
         console.log("Entry required!");
@@ -100,6 +111,7 @@ const questions = [
     name: "license",
     message: "what is the title of your project?",
     choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
+
     validate: (licenseInput) => {
       if (licenseInput) {
         return true;
@@ -142,95 +154,79 @@ const questions = [
 /////////////////end of questions list////////////
 
 ////////////mock data///////////////////
-var answers = [
-  {
-    title: "Project Wake Up",
-    description: "I am sleepy.",
-    installation: "Installation is done by eating chocolate",
-    usage: "anyone",
-    contribute: "anyone",
-    test: "Eat the chocolate and see if it helps",
-    license: ["MIT"],
-    github: "charissahollister",
-    email: "hollister.charissa@gmail.com",
-  },
-];
-const { content } = generateMarkdown(answers);
-console.log(answers);
+// var answers = [
+//   {
+//     title: "Project Wake Up",
+//     authors: "Charissa Hollister",
+//     description: "I am sleepy.",
+//     installation: "Installation is done by eating chocolate",
+//     usage: "anyone",
+//     contribute: "anyone",
+//     test: "Eat the chocolate and see if it helps",
+//     license: ["MIT"],
+//     github: "charissahollister",
+//     email: "hollister.charissa@gmail.com",
+//   },
+// ];
+// const data = answers[0];
+// // console.log(data);
+// const content = generateMarkdown(data);
+// console.log(content);
+// fs.writeFile("./temp/README.md", content, (err2) => {
+//   if (err2) {
+//     console.log(err2);
+//     return;
+//   }
+// });
+
 //////////end of mock data & mock function/////////////
 
 /////////// prompt user function//////////////
-// const promptUser = () => {
-//   return inquirer.prompt(questions);
-// };
+const promptUser = () => {
+  return inquirer.prompt(questions);
+};
 
-// promptUser()
-//   .then((answers) => {
-//     // Use user feedback for... whatever!!
-//     console.log(answers);
-//     const content = generateMarkdown(answers);
-//     writeToFile("filename-here.md", content);
-//   })
-//   .catch((error) => {
-//     if (error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       // Something else went wrong
-//     }
+promptUser()
+  .then((data) => {
+    // Use user feedback for... whatever!!
+    // console.log(data);
+    const content = generateMarkdown(data);
+    console.log(content);
+    writeFile("./temp/README.md", content);
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
+/////////end of prompt user function////////////////
+
+// const writeFile = (fileContent) => {
+//   return new Promise((resolve, reject) => {
+//     fs.writeFile("./dist/index.html", fileContent, (err) => {
+//       // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
+//       if (err) {
+//         reject(err);
+//         // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+//         return;
+//       }
+
+//       // if everything went well, resolve the Promise and send the successful data to the `.then()` method
+//       resolve({
+//         ok: true,
+//         message: "File created!",
+//       });
+//     });
 //   });
-
+//   console.log("doc written");
+// }
+// writeIt(content);
 // TODO: Create a function to write README file
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {}
 
 // // Function call to initialize app
-init();
-
-// function writeToFile(fileName, data) {}
-// inquirer
-//   .prompt(questions)
-
-// promptUser()
-//   .then(promptProject)
-//   .then((portfolioData) => {
-//     const pageHTML = generatePage(portfolioData);
-
-//     fs.writeFile("./index.html", pageHTML, (err) => {
-//       if (err) throw new Error(err);
-
-//       console.log(
-//         "Page created! Check out index.html in this directory to see it!"
-//       );
-//     });
-//   });
-
-/////ronny's example of if I wanted to pass 2 items. deconstruct frist then pass
-
-// promptUser().then((answers) => {
-//   const { property_one, property_two } = answers;
-
-//   const content = generateMarkdown({ property_one, property_two });
-
-//   writeToFile("filename-here.md", content);
-// });
-
-///// map is like for each but makes a new array
-// promptUser()
-//   //   .then(promptProject)
-//   .then((license) => {
-//     return generateMarkdown(license);
-//   })
-//   .then((pageReadme) => {
-//     return writeFile(pageReadme);
-//   })
-//   .then((writeFileResponse) => {
-//     console.log(writeFileResponse);
-//     return copyFile();
-//   })
-//   .then((copyFileResponse) => {
-//     console.log(copyFileResponse);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+// init();
