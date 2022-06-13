@@ -1,6 +1,6 @@
-# f
+# s
 ![License Badge MIT](https://img.shields.io/badge/license-MIT-blue)  
-Authored by f  
+Authored by s  
 
 ## Table of Contents:
   - [Description](#Description)
@@ -10,51 +10,27 @@ Authored by f
   - [Contribution](#Contribution)
   - [Test](#Test)
   - [Questions](#Questions)
-  
-<br  />
-## Description<br  />
-  I am sleepy.<br  />
-  <br  />
-##Installation<br  />
-  Installation is done by eating chocolate<br  />
-  <br  />
-##Usage<br  />
-anyone<br  />
-<br  />
-##Contribution<br  />
-  anyone<br  />
-  <br  />
-##Tests<br  />
-  Eat the chocolate and see if it helps<br  />
-  <br  />
-##Questions<br  />
-If you have any with additional questions reach out to me at:<br  />
-  [hollister.charissa@gmail.com}](hollister.charissa@gmail.com)  <br  /> 
-  [github.com/charissahollister}](https://github.com/charissahollister)<br  />
-  <br  />
-##License<br  />
-  info: a notice that explains which license the application is covered under<br  />
 
 
 ## Description  
-  f
+  s
 
 ## Installation  
-  f
+  s
  
 ## Usage  
-f
+s
 
 ## Contribution  
-  f
+  s
  
 ## Tests  
-  f
+  s
   
 ## Questions  
 If you have any with additional questions reach out to me at:  
-  * [f}](f)  
-  * [github.com/f}](https://github.com/f)  
+  * [s}](s)  
+  * [github.com/s}](https://github.com/s)  
   
   ## License  info: a notice that explains which license the application is covered under
     
