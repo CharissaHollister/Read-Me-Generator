@@ -34,7 +34,9 @@ function renderLicenseSection(licenseType) {
   } else if (!licenseType) {
     return "";
   } else {
-    return `##License<br  />  <br  /> info: a notice that explains which license the application is covered under`;
+    return `## License  info: a notice that explains which license the application is covered under
+    
+    `;
   }
 }
 
@@ -45,10 +47,10 @@ function generateMarkdown(data) {
   // console.log(data);
   let licenseType = data.license;
   return `# ${data.title}
-${renderLicenseBadge(licenseType)}<br  />
-Authored by ${data.authors}<br  />
-<br  />
-##Table of Contents:
+${renderLicenseBadge(licenseType)}  
+Authored by ${data.authors}  
+
+## Table of Contents:
   - [Description](#Description)
   - [Installation](#Installation)
   - [Usage](#Usage)
@@ -57,29 +59,28 @@ Authored by ${data.authors}<br  />
   - [Test](#Test)
   - [Questions](#Questions)
 
-<br  />
-##Description<br  />
-  ${data.description}<br  />
-  <br  />
-##Installation<br  />
-  ${data.installation}<br  />
-  <br  />
-##Usage<br  />
-${data.usage}<br  />
-<br  />
-##Contribution<br  />
-  ${data.contribute}<br  />
-  <br  />
-##Tests<br  />
-  ${data.test}<br  />
-  <br  />
-##Questions<br  />
-If you have any with additional questions reach out to me at:<br  />
-  [${data.email}}](${data.email})  <br  /> 
-  [github.com/${data.github}}](https://github.com/${data.github})<br  />
-  <br  />
-  ${renderLicenseSection(licenseType)}<br  />
 
+## Description  
+  ${data.description}
+
+## Installation  
+  ${data.installation}
+ 
+## Usage  
+${data.usage}
+
+## Contribution  
+  ${data.contribute}
+ 
+## Tests  
+  ${data.test}
+  
+## Questions  
+If you have any with additional questions reach out to me at:  
+  * [${data.email}}](${data.email})  
+  * [github.com/${data.github}}](https://github.com/${data.github})  
+  
+  ${renderLicenseSection(licenseType)}
 `;
 }
 

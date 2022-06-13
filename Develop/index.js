@@ -192,7 +192,12 @@ promptUser()
     // console.log(data);
     const content = generateMarkdown(data);
     console.log(content);
-    writeFile("./temp/README.md", content);
+    fs.writeFile("./temp/README.md", content, (err2) => {
+      if (err2) {
+        console.log(err2);
+        return;
+      }
+    });
   })
   .catch((error) => {
     if (error.isTtyError) {
