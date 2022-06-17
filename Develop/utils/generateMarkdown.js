@@ -34,7 +34,8 @@ function renderLicenseSection(licenseType) {
   } else if (!licenseType) {
     return "";
   } else {
-    return `## License  info: a notice that explains which license the application is covered under
+    return `## License  
+    Notice: This application utilizes the license ${licenseType}.
     
     `;
   }
@@ -67,7 +68,7 @@ Authored by ${data.authors}
   ${data.installation}
  
 ## Usage  
-${data.usage}
+  ${data.usage}
 
 ## Contribution  
   ${data.contribute}
@@ -77,14 +78,16 @@ ${data.usage}
   
 ## Questions  
 If you have any with additional questions reach out to me at:  
-  * [${data.email}}](${data.email})  
-  * [github.com/${data.github}}](https://github.com/${data.github})  
+  * [${data.email}](${data.email})  
+  * [github.com/${data.github}](https://github.com/${data.github})  
   
   ${renderLicenseSection(licenseType)}
 `;
 }
 
 module.exports = generateMarkdown;
+
+console.log(generateMarkdown(answers))
 
 ////////////Layout and Answer Array set up/////////////
 

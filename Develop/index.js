@@ -153,6 +153,34 @@ const questions = [
 
 /////////////////end of questions list////////////
 
+/////////// prompt user function//////////////
+const promptUser = () => {
+  return inquirer.prompt(questions);
+};
+
+promptUser()
+  .then((data) => {
+    // Use user feedback for... whatever!!
+    // console.log(data);
+    const content = generateMarkdown(data);
+    console.log(content);
+    fs.writeFile("./temp/README.md", content, (err2) => {
+      if (err2) {
+        console.log(err2);
+        return;
+      }
+    });
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
+/////////end of prompt user function////////////////
+
+
 ////////////mock data///////////////////
 // var answers = [
 //   {
@@ -181,31 +209,31 @@ const questions = [
 
 //////////end of mock data & mock function/////////////
 
-/////////// prompt user function//////////////
-const promptUser = () => {
-  return inquirer.prompt(questions);
-};
+// /////////// prompt user function//////////////
+// const promptUser = () => {
+//   return inquirer.prompt(questions);
+// };
 
-promptUser()
-  .then((data) => {
-    // Use user feedback for... whatever!!
-    // console.log(data);
-    const content = generateMarkdown(data);
-    console.log(content);
-    fs.writeFile("./temp/README.md", content, (err2) => {
-      if (err2) {
-        console.log(err2);
-        return;
-      }
-    });
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
+// promptUser()
+//   .then((data) => {
+//     // Use user feedback for... whatever!!
+//     // console.log(data);
+//     const content = generateMarkdown(data);
+//     console.log(content);
+//     fs.writeFile("./temp/README.md", content, (err2) => {
+//       if (err2) {
+//         console.log(err2);
+//         return;
+//       }
+//     });
+//   })
+//   .catch((error) => {
+//     if (error.isTtyError) {
+//       // Prompt couldn't be rendered in the current environment
+//     } else {
+//       // Something else went wrong
+//     }
+//   });
 /////////end of prompt user function////////////////
 
 // const writeFile = (fileContent) => {
