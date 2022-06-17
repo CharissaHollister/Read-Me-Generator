@@ -1,48 +1,22 @@
-# Professional README Generator Starter Code
+# **Professional *README* Generator**
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+##### [Github repo source](https://github.com/CharissaHollister/Read-Me-Generator)
 
-https://drive.google.com/file/d/1VZq7ruU-GCEJyFZMOZCo3Qy0QTHu8Rx7/view 
+## Description:
+
+######  This is a *README* generator built to aid with production of a *README* file within your developed projects that will track and upload from the terminal to the *README* file. The goal of this is to improve communication and to aid with redundancy within a project in order to build professional *README* that can be utilized for navigation within a project and or functional collected data produced by the user. 
+
+## Walkthrough Video:
+
+https://user-images.githubusercontent.com/103005272/174331301-3193553c-316d-4b47-8345-1ce97e98ece9.mp4
 
 By the end of this week, you'll complete your weekly Challenge assignment by creating a generator that dynamically produces a high-quality README file directly from the command line.
 
-In order to succeed in this Challenge, you’ll apply the following skills:
-
-Modularize your code into multiple files
-
-Write your code using ES6+ concepts, such as let, const, and arrow functions
-
-Use npm (Node Package Manager) to initialize a project and install and import Node.js modules
-
-Build an interactive command-line application that processes user input using a third-party Node.js module
-
-Use string literals to dynamically generate markdown from the command line
-
-
-Getting Started
-Here are some guidelines to help you get started:
-
-Create a .gitignore file and include node_modules/ and .DS_Store/ so that your node_modules directory isn't tracked or uploaded to GitHub. Be sure to create your .gitignore file before installing any npm dependencies.
-
-Make sure that your repo includes a package.json with the required dependencies. You can create one by running npm init when you first set up the project, before installing any dependencies.
-
-Include a video of the typical user flow through your application. This includes views of the prompts and the responses after their selection.
-
-Include any other screenshots you deem necessary to help someone who has never been introduced to your application understand the purpose and function of it. This is how you will communicate to potential employers or other developers in the future what you built and why, and to show how it works.
 
 
 
 
-https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
-
-https://www.npmjs.com/package/inquirer
-
-The application will be invoked by using the following command:
-
-node index.js
-
-
-
+## Customer Requirements
 AS A developer
 I WANT a README generator
 SO THAT I can quickly create a professional README for a new project
@@ -62,3 +36,5 @@ WHEN I enter my email address
 THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
+
+[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
