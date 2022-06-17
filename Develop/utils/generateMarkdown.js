@@ -1,7 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
 // license choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
 // If there is no license, return an empty string
-
+//generate license Badge
 function renderLicenseBadge(licenseType) {
   //if none then null return, else this
   if (licenseType === "none") {
@@ -13,10 +12,8 @@ function renderLicenseBadge(licenseType) {
     return `![License Badge ${licenseType}](https://img.shields.io/badge/license-${licenseType}-blue)`;
   }
 }
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// generate license link in TOC //- [License](#license)
 function renderLicenseLink(licenseType) {
-  //take you to license section in TOC //- [License](#license)
   if (licenseType === "none") {
     return "";
   } else if (!licenseType) {
@@ -25,9 +22,7 @@ function renderLicenseLink(licenseType) {
     return `- [License](#license)`;
   }
 }
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// generate license section 
 function renderLicenseSection(licenseType) {
   if (licenseType === "none") {
     return "";
@@ -41,9 +36,6 @@ function renderLicenseSection(licenseType) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
-
-////double Hash showing up instead of creating header. link in TOC not working. email not a link and email/github show alt text things and the link
 function generateMarkdown(data) {
   // console.log(data);
   let licenseType = data.license;
@@ -87,7 +79,7 @@ If you have any with additional questions reach out to me at:
 
 module.exports = generateMarkdown;
 
-console.log(generateMarkdown(answers))
+// console.log(generateMarkdown(answers))
 
 ////////////Layout and Answer Array set up/////////////
 

@@ -1,11 +1,9 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 var fs = require("fs");
-// var staticSite = require("static-site");
 var inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 /////////////////working questions list////////////
-// TODO: Create an array of questions for user input
 const questions = [
   {
     //get Project Title
@@ -150,17 +148,15 @@ const questions = [
     },
   },
 ];
-
 /////////////////end of questions list////////////
 
-/////////// prompt user function//////////////
+/////////// prompt user and write file function//////////////
 const promptUser = () => {
   return inquirer.prompt(questions);
 };
 
 promptUser()
   .then((data) => {
-    // Use user feedback for... whatever!!
     // console.log(data);
     const content = generateMarkdown(data);
     console.log(content);
@@ -173,15 +169,19 @@ promptUser()
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
+      console.log("Prompt couldn't be rendered in the current environment")
     } else {
-      // Something else went wrong
+      console.log("Error has occured");
     }
   });
-/////////end of prompt user function////////////////
+/////////end of function////////////////
 
 
-////////////mock data///////////////////
+
+
+
+
+////////////mock data for testing///////////////////
 // var answers = [
 //   {
 //     title: "Project Wake Up",
@@ -206,60 +206,4 @@ promptUser()
 //     return;
 //   }
 // });
-
 //////////end of mock data & mock function/////////////
-
-// /////////// prompt user function//////////////
-// const promptUser = () => {
-//   return inquirer.prompt(questions);
-// };
-
-// promptUser()
-//   .then((data) => {
-//     // Use user feedback for... whatever!!
-//     // console.log(data);
-//     const content = generateMarkdown(data);
-//     console.log(content);
-//     fs.writeFile("./temp/README.md", content, (err2) => {
-//       if (err2) {
-//         console.log(err2);
-//         return;
-//       }
-//     });
-//   })
-//   .catch((error) => {
-//     if (error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       // Something else went wrong
-//     }
-//   });
-/////////end of prompt user function////////////////
-
-// const writeFile = (fileContent) => {
-//   return new Promise((resolve, reject) => {
-//     fs.writeFile("./dist/index.html", fileContent, (err) => {
-//       // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
-//       if (err) {
-//         reject(err);
-//         // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-//         return;
-//       }
-
-//       // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-//       resolve({
-//         ok: true,
-//         message: "File created!",
-//       });
-//     });
-//   });
-//   console.log("doc written");
-// }
-// writeIt(content);
-// TODO: Create a function to write README file
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
